@@ -1,0 +1,14 @@
+body {
+    font-family: 'Courier New', monospace;
+    text-align:center;
+    background-color: #34495E;
+    /* background-color: #2a3d50; */
+    color: white;
+    font-size: 14px;
+}
+
+.border {
+    position: relative;
+    margin: 25%;
+    width: 50%;
+}
