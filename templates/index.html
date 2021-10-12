@@ -8,15 +8,21 @@
 
 <div class="border">
   <form action="/add" method="get" class="form">
-    <label>ADD METHOD</label>
+    <label>Shopping Cart</label>
     <br><br>
-    <input name="item" placeholder="item" type="text">
+    <input name="items" placeholder="item" type="text">
     <input type="submit" value="ADD">
   </form>
-
-<br><br>
-
-    {{out}}
+<br>
+    <table class="table">
+    <tr>
+        <th>Item</th>
+    </tr>
+        <br><br>
+    <tr>
+        <td>{{out}}</td>
+    </tr>
+    </table>
 </div>
 
 

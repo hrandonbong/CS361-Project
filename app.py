@@ -1,13 +1,18 @@
 from flask import Flask, render_template, request
 
 app = Flask(__name__)
-SESSION = Reward()
 
 @app.route("/")
 def index():
     return render_template("index.html")
 
-@app.route("/",methods=["GET"])
-def ret():
-    add = request.args.get("item")
-    return render_template("index.html",out=add)
+@app.route("/add",methods=["GET","POST"])
+def append():
+    if request.method == "POST":
+        output = request.form.get("items")
+    else:
+        output = request.args.get("items")
+    return render_template("index.html",out=output)
+
+if __name__== '__main__':
+    app.run()
