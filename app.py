@@ -6,6 +6,7 @@ app = Flask(__name__)
 def index():
     return render_template("index.html")
 
+#--------- HTTP REQUEST ----------#
 @app.route("/add",methods=["GET","POST"])
 def append():
     if request.method == "POST":
