@@ -11,20 +11,27 @@
     <label>Shopping Cart</label>
     <br><br>
     <input name="items" placeholder="item" type="text">
-    <input type="submit" value="ADD">
+    <input type="submit" value="ADD" onclick="toggle_display()">
   </form>
 <br>
     <table class="table">
     <tr>
-        <th>Item</th>
+        <th>SHOPPING CART</th>
     </tr>
         <br><br>
+
+        {% for item in items %}
     <tr>
-        <td>{{out}}</td>
+        <td>
+            <p class="cart">{{item}}</p>
+            <img src="/static/{{items[item][1]}}" class="project-img" width="325" height="250" align="left">
+        </td>
     </tr>
+        {% endfor %}
     </table>
 </div>
 
+<script src="{{url_for('static', filename='javascript.js')}}"></script>
 
 </body>
 </html>

@@ -2,9 +2,8 @@ body {
     font-family: 'Courier New', monospace;
     text-align:center;
     background-color: #34495E;
-    /* background-color: #2a3d50; */
     color: white;
-    font-size: 14px;
+    font-size: 20px;
 }
 
 .border {
@@ -18,3 +17,4 @@ body {
     margin: 25%;
     width: 50%;
 }
+
