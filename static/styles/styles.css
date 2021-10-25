@@ -18,3 +18,7 @@ body {
     width: 50%;
 }
 
+.project-img{
+    position: relative;
+    left: 25%;
+}

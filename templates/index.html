@@ -23,8 +23,11 @@
         {% for item in items %}
     <tr>
         <td>
-            <p class="cart">{{item}}</p>
-            <img src="/static/{{items[item][1]}}" class="project-img" width="325" height="250" align="left">
+            <p class="cart">{{items[item][0]}}</p>
+            <img src="/static/{{items[item][1]}}" class="project-img" width="325" height="250">
+            <a href={{items[item][2]}}>{{items[item][2]}}</a>
+            <br>
+            <button onclick="window.location.href='./complete/{{item}}';">DELETE</button>
         </td>
     </tr>
         {% endfor %}
