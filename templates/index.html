@@ -11,7 +11,8 @@
     <label>Shopping Cart</label>
     <br><br>
     <input name="items" placeholder="item" type="text">
-    <input type="submit" value="ADD" onclick="toggle_display()">
+    <!--<input type="submit" value="ADD" onclick="toggle_display()">*-->
+      <input type="submit" value="ADD">
   </form>
 <br>
     <table class="table">
@@ -24,7 +25,9 @@
     <tr>
         <td>
             <p class="cart">{{items[item][0]}}</p>
-            <img src="/static/{{items[item][1]}}" class="project-img" width="325" height="250">
+            <p class="price">{{items[item][3]}}</p>
+<!--            <img src="/static/{{items[item][1]}}" class="project-img" width="325" height="250">-->
+            <img src="{{items[item][1]}}" class="project-img" width="325" height="250">
             <a href={{items[item][2]}}>{{items[item][2]}}</a>
             <br>
             <button onclick="window.location.href='./complete/{{item}}';">DELETE</button>
