@@ -1,8 +1,6 @@
 from flask import Flask, render_template, request
 import requests
-from glob import glob
 from bs4 import BeautifulSoup
-import pandas as pd
 
 app = Flask(__name__)
 cart = {}
@@ -26,18 +24,16 @@ def append():
         output = request.args.get("items")
         # image = request.args.get("items") + ".jpg"
         url1 = 'https://zacharylevatoncs361.herokuapp.com/images'
-        myobj = {'keyword':output}
-        image = requests.post(url1,data=myobj).text
-        print(image)
+        url2 = 'https://cs361shoppingcart.herokuapp.com/prices'
+        myobj1 = {'keyword':output}
+        image = requests.post(url1,data=myobj1).text
         link = "https://www.ralphs.com/search?query=" + output
         #link = 'https://www.target.com/s?searchTerm=' + output
         #link = 'https://www.amazon.com/s?k=' + output + '&ref=nb_sb_noss_2'
         #link = 'https://www.traderjoes.com/home/search?q=' + output + '&section=products&global=yes'
         #link = 'https://www.google.com/search?q=' + output + '&authuser=2&sxsrf=AOaemvL20_aZZwfZTxM7Hr4jAgtXM7CaJA:1636496154234&source=lnms&tbm=shop&sa=X&ved=2ahUKEwibxsufp4z0AhUpJTQIHW05BRgQ_AUoAnoECAEQBA&biw=1696&bih=1336&dpr=1.5'
-
-        price = requests.post(url2,data=myobj).text
-        # price = 5
-
+        myobj2 = {'items':output}
+        price = requests.post(url2,data=myobj2).text
 
     cart[currID] = [output, image, link, price]
     currID += 1
