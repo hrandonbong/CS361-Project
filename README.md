@@ -1,1 +1,1 @@
-# CS361-Project
+# WebScraper
